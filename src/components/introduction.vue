@@ -3,7 +3,7 @@
     <div class="header">
       <van-nav-bar :title="isMaster ? userInfoList.userName : actorInfoList.userName">
         <template #right>
-          <van-icon v-if="showSetting" name="revoke" size="18" />
+          <van-icon v-if="showSetting" name="revoke" size="18" @click="logout" />
         </template>
       </van-nav-bar>
       <div class="img_blur"></div>
@@ -11,7 +11,7 @@
     <div class="human">
       <div class="headImg">
         <img v-if="userInfoList.headImg" :src="userInfoList.headImg" alt="" />
-        <img v-else src="../../assets/img/emptyImg.jpg" alt="" />
+        <img v-else src="../assets/img/emptyImg.jpg" alt="" />
       </div>
 
       <div class="followList">
@@ -85,7 +85,7 @@ export default defineComponent({
     // 退登
     const logout = () => {
       window.localStorage.clear()
-      router.push({ name: 'Home' })
+      router.push({ name: 'Blog' })
     }
     // 关注/取关用户
     const letFollow = () => {
@@ -195,6 +195,11 @@ export default defineComponent({
   .header {
     position: relative;
     overflow: hidden;
+    .van-nav-bar {
+      .van-icon {
+        color: #505153;
+      }
+    }
     .img_blur {
       width: 100%;
       height: 170px;

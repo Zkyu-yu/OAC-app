@@ -4,7 +4,7 @@ import './assets/css/common.css'
 import '@fontsource/aldrich'
 import '@fontsource/coda'
 import router from './router'
-import { Tabbar, TabbarItem, Button, NavBar, Swipe, SwipeItem, Col, Row, Icon, Popup, Field, CellGroup } from 'vant'
+import { Tabbar, TabbarItem, Button, NavBar, Swipe, SwipeItem, Col, Row, Icon, Popup, Field, CellGroup, Form } from 'vant'
 
 const app = createApp(App)
 app
@@ -21,4 +21,5 @@ app
   .use(Popup)
   .use(Field)
   .use(CellGroup)
+  .use(Form)
   .mount('#app')

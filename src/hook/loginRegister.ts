@@ -37,7 +37,7 @@ export default function loginRegister() {
         message: 'Welcome to the Human Community!',
         icon: 'smile-comment-o',
       })
-      router.push({ name: 'Blog' })
+      router.push({ name: 'MySpace' })
     }
   }
 

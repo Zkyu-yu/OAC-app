@@ -18,16 +18,6 @@
       <div class="button" :style="{ background: onAtActor ? '#232323' : '' }"></div>
       <div class="word" :style="{ color: onAtActor ? '#232323' : '' }">actor</div>
     </div>
-    <!-- 搜索结果列表 -->
-    <!-- <div v-if="showResult" class="searchResult">
-      <div class="line"></div>
-      <div class="searchTitle">
-        Search Results for:
-        <strong>{{ searchInput }}</strong>
-      </div>
-      <Card v-if="onAtTitle" :card-state="2"></Card>
-      <Card v-else :card-state="3"></Card>
-    </div> -->
   </div>
 </template>
 
@@ -35,14 +25,10 @@
 import { defineComponent } from '@vue/runtime-core'
 import { Toast } from 'vant'
 import { ref } from 'vue'
-// import Card from '../components/card.vue'
 import router from '../router'
 
 export default defineComponent({
   name: 'Search',
-  // components: {
-  //   Card,
-  // },
   setup() {
     const searchInput = ref('')
     const onAtTitle = ref(false)

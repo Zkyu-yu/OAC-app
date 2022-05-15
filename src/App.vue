@@ -4,7 +4,7 @@
       <van-tabbar-item replace to="/about" icon="eye-o"></van-tabbar-item>
       <van-tabbar-item replace to="/blog" icon="home-o"></van-tabbar-item>
       <van-tabbar-item replace to="/search" icon="search"></van-tabbar-item>
-      <van-tabbar-item replace to="/mySpace" icon="user-o"></van-tabbar-item>
+      <van-tabbar-item replace :to="isSign ? '/mySpace' : '/login'" icon="user-o"></van-tabbar-item>
     </van-tabbar>
 
     <router-view :key="$route.fullPath"></router-view>
@@ -20,6 +20,7 @@ export default defineComponent({
   setup() {
     const active = ref(0)
     const isShow = ref(true)
+    const isSign = localStorage.getItem('userName') !== null ? 1 : 0
     // 路由初始化
     if (router.currentRoute.value.path === '/') {
       router.push('/blog')
@@ -43,7 +44,7 @@ export default defineComponent({
       }
     )
 
-    return { active, isShow }
+    return { active, isShow, isSign }
   },
 })
 </script>
