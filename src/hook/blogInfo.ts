@@ -36,7 +36,7 @@ export default function blogInfo(_id?: string) {
   const postBlog = async (params: blogInfoItem) => {
     const res: { code: number; message: string } = await request.post('/blog/postBlog', params)
     if (res.code === 200) {
-      Toast('Success!')
+      Toast.success('Success!')
       getAllBlogsInfo()
     }
   }
@@ -44,7 +44,7 @@ export default function blogInfo(_id?: string) {
   const editBlog = async (params: blogInfoItem, _id?: string) => {
     const res: { code: number; message: string } = await request.post(`/blog/editBlog/${_id}`, params)
     if (res.code === 200) {
-      Toast('Success!')
+      Toast.success('Success!')
       // 只有管理员会传_id,如果管理员操作就查看博客详情
       if (!_id) {
         getBlogDetail()
@@ -56,7 +56,7 @@ export default function blogInfo(_id?: string) {
   const deleteBlog = async (_id?: string) => {
     const res: { code: number; message: string } = await request.delete(`/blog/deleteBlog/${_id}`)
     if (res.code === 200) {
-      Toast('Success!')
+      Toast.success('Success!')
       getAllBlogsInfo()
       // 只有管理员会传_id,如果管理员操作就不退回主页
       if (!_id) {

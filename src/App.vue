@@ -28,8 +28,6 @@ export default defineComponent({
     watch(
       () => router.currentRoute.value.path,
       (oldVal, newVal) => {
-        console.log(router)
-
         if (oldVal !== newVal) {
           if (
             router.currentRoute.value.path === '/about' ||

@@ -14,7 +14,7 @@ request.interceptors.request.use(
     return config
   },
   error => {
-    Toast('网络响应错误，请刷新或稍后再试！')
+    Toast.fail('网络响应错误，请刷新或稍后再试！')
     return Promise.reject(error)
   }
 )
@@ -25,11 +25,11 @@ request.interceptors.response.use(
     const { data } = response
     const { code } = data
     if (code === 200) return Promise.resolve(data)
-    else Toast(data.message)
+    else Toast.fail(data.message)
     return Promise.reject(data)
   },
   error => {
-    Toast('网络响应错误，请刷新或稍后再试！')
+    Toast.fail('网络响应错误，请刷新或稍后再试！')
     return Promise.reject(error)
   }
 )

@@ -33,7 +33,11 @@ export default function loginRegister() {
       localStorage.setItem('userid', res.message.userid)
       localStorage.setItem('userName', params.userName)
       Toast('Welcome to the Human Community!')
-      router.push({ name: 'Home' })
+      Toast({
+        message: 'Welcome to the Human Community!',
+        icon: 'smile-comment-o',
+      })
+      router.push({ name: 'Blog' })
     }
   }
 
