@@ -59,6 +59,7 @@ export default defineComponent({
       // 展示搜索actor title
     } else if (props.cardState === 3) {
       const searchActor = inject('searchActor')
+      console.log('search', searchActor)
       const { actorBlogList } = blogByName(searchActor as string)
       cardList.value = actorBlogList
       // 展示用户点赞列表

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <van-nav-bar title="发现" />
+    <van-nav-bar fixed title="发现" />
     <van-swipe :autoplay="3000" lazy-render :show-indicators="false">
       <van-swipe-item v-for="(img, index) in imgList" :key="index">
         <img class="img" :src="getImageUrl(img.img_name)" />
@@ -41,6 +41,7 @@ export default defineComponent({
   position: relative;
   color: #e2e8f2;
   .img {
+    margin-top: 45px;
     width: 100%;
     height: inherit;
   }
