@@ -4,22 +4,32 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/about',
     name: 'About',
+    meta: { index: 0 },
     component: () => import(/* webpackChunkName: "About" */ '../views/about.vue'),
   },
   {
     path: '/blog',
     name: 'Blog',
+    meta: { index: 0 },
     component: () => import(/* webpackChunkName: "Blog" */ '../views/blog.vue'),
   },
   {
     path: '/mySpace',
     name: 'MySpace',
+    meta: { index: 0 },
     component: () => import(/* webpackChunkName: "MySpace" */ '../views/mySpace.vue'),
   },
   {
     path: '/search',
     name: 'Search',
+    meta: { index: 0 },
     component: () => import(/* webpackChunkName: "search" */ '../views/search.vue'),
+  },
+  {
+    path: '/blogDetails',
+    name: 'BlogDetails',
+    meta: { index: 1 },
+    component: () => import(/* webpackChunkName: "BlogDetails" */ '../views/blogDetails.vue'),
   },
 ]
 
